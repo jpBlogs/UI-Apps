@@ -1,0 +1,12 @@
+.Quicklinks
+{
+    text-align: left;  
+    height: 500px;
+    overflow: auto;
+}
+
+.Quicklinks-List
+{
+    list-style: none;
+    padding-left: 0;
+}

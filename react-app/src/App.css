@@ -1,0 +1,20 @@
+.App {
+  overflow: auto;
+}
+
+.App-Logo {
+  text-align: right;
+  height: 150px;
+}
+
+.App-Header {
+  height: 250px;
+  text-align: left;
+}
+
+.App-PageContainer
+{
+  width:70%;
+  margin:auto;
+  margin-top:15px;
+}

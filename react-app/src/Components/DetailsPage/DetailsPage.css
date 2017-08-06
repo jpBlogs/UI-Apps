@@ -1,0 +1,14 @@
+.DetailsPage-Toolbar
+{
+    margin-bottom: 10px;
+}
+
+.DetailsPage-BackBtn button
+{
+    float:right;
+}
+
+.DetailsPage-TabContent
+{
+    min-height:200px;
+}

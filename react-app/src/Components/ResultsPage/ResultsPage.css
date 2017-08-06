@@ -1,0 +1,15 @@
+.ResultsPage-AutoCompleteDiv
+{
+  margin-top:15px;
+  height: 60px;
+  text-align: left;
+}
+.ResultsPage-Filters
+{
+    float:left;
+    margin-right:10px;
+}
+.ResultsPage-ListItem .panel-heading
+{
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.SearchPage-AutoCompleteDiv
+{
+  margin-top:15px;
+  height: 60px;
+  text-align: left;
+}
+.SearchPage-AutoCompleteDiv h4
+{
+  text-align: right;
+}
