@@ -10,7 +10,10 @@ export default class SearchPage extends Component {
         ClearAllFilters();
     }
     renderQuicklinks(name) {
-        return <Quicklinks name={name} history={this.props.history} />;
+        return <Quicklinks name={name} history={this.props.history} onClick={this.goToResultsPage} />;
+    }
+    goToResultsPage() {
+        window.location.href = '/results';
     }
     render () {
         return (
@@ -18,7 +21,7 @@ export default class SearchPage extends Component {
                 <div className="SearchPage-AutoCompleteDiv row">
                     <div className="col-lg-12">
                         <div className="col-lg-1"><h4>Search:</h4></div> 
-                        <div className="col-lg-11"><Autocomplete /></div> 
+                        <div className="col-lg-11"><Autocomplete onChange={this.goToResultsPage} /></div> 
                     </div>
                 </div>
                 <div className="row">

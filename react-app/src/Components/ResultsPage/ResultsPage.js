@@ -14,6 +14,7 @@ export default class ResultsPage extends Component {
             filters: [],
             results: []
         }
+        this.updateResultsPage = this.updateResultsPage.bind(this);
     }
     componentDidMount(){
         this.updateResultsPage();
@@ -31,7 +32,7 @@ export default class ResultsPage extends Component {
                 <div className="ResultsPage-AutoCompleteDiv row">
                     <div className="col-lg-12">
                         <div className="col-lg-1"><h4>Search:</h4></div> 
-                        <div className="col-lg-11"><Autocomplete /></div> 
+                        <div className="col-lg-11"><Autocomplete onChange={this.updateResultsPage} /></div> 
                     </div>
                 </div>
                 <div className="ResultsPage-Toolbar row col-lg-12">

@@ -31,7 +31,7 @@ export default class Autocomplete extends Component {
     setTextFilter (value) {
         ClearAllFilters();
         AddFilter(value.value, 'full_name', value.label);
-        window.location.href = '/results';
+        this.props.onChange();
     }
     render () {
         return (
