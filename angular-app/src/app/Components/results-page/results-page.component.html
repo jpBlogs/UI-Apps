@@ -1,0 +1,38 @@
+<div class="ResultsPage container-fluid">
+    <div class="ResultsPage-AutoCompleteDiv row">
+        <div class="col-lg-12">
+            <div class="col-lg-1"><h6>Search:</h6></div>
+            <div class="col-lg-11"><app-autocomplete (onClick)="updateResults()"></app-autocomplete></div>
+        </div>
+    </div>
+    <div class="ResultsPage-Toolbar row col-lg-12">
+        <input class="btn btn-default" type="button" value="Back" (click)="goBack()" />
+    </div>
+    <div class="ResultsPage-Header row col-lg-12">
+        <h1>Results: {{results.length}}</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <p>Filters:</p>
+        </div>
+        <div class="col-lg-11">
+          <div class="ResultsPage-Filters" *ngFor="let filter of filters">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>{{' '+filter.value}}
+          </div>
+        </div>
+    </div>
+    <div class="ResultsPage-List row" *ngIf="results">
+        <div class="ResultsPage-ListItem col-lg-12" *ngFor="let result of results">
+            <div class="card">
+            <div class="card-header" (click)="goToDetails(result.id)">{{result.full_name}}</div>
+            <div class="card-block">
+                <div class="col-lg-4">City: {{result.city}}</div>
+                <div class="col-lg-4">State: {{result.state}}</div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="ResultsPage-Loading row" *ngIf="!results">
+        Loading...
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div id="SearchPage container-fluid">
+    <div class="SearchPage-AutoCompleteDiv row">
+        <div class="col-lg-12">
+            <div class="col-lg-1"><h6>Search:</h6></div>
+            <div class="col-lg-11"><app-autocomplete (onClick)="goToResultsPage()"></app-autocomplete></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <app-quicklinks [type]="linksList[0]" (onClick)="goToResultsPage()"></app-quicklinks>
+        </div>
+        <div class="col-lg-3">
+            <app-quicklinks [type]="linksList[1]" (onClick)="goToResultsPage()"></app-quicklinks>
+        </div>
+        <div class="col-lg-3">
+            <app-quicklinks [type]="linksList[2]" (onClick)="goToResultsPage()"></app-quicklinks>
+        </div>
+        <div class="col-lg-3">
+            <app-quicklinks [type]="linksList[3]" (onClick)="goToResultsPage()"></app-quicklinks>
+        </div>
+    </div>
+</div>

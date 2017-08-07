@@ -1,0 +1,27 @@
+#App {
+  overflow: auto;
+}
+
+#App-Logo {
+  text-align: right;
+  height: 150px;
+  float: right;
+}
+
+#App-Header {
+  height: 250px;
+  text-align: left;
+}
+
+#App-Header h1
+{
+  height: 100%;
+  padding-top: 50px;
+}
+
+#App-PageContainer
+{
+  width:70%;
+  margin:auto;
+  margin-top:15px;
+}

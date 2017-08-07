@@ -1,0 +1,22 @@
+#Quicklinks-List
+{
+  list-style: none;
+  padding-left: 0;
+}
+
+#Quicklinks-List li
+{
+  height: 30px;
+}
+
+a
+{
+  color: #337ab7 !important;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+a:hover
+{
+  text-decoration: underline !important;
+}

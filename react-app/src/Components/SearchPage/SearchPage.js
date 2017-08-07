@@ -13,7 +13,7 @@ export default class SearchPage extends Component {
         return <Quicklinks name={name} history={this.props.history} onClick={this.goToResultsPage} />;
     }
     goToResultsPage() {
-        window.location.href = '/results';
+        this.history.push('/results');
     }
     render () {
         return (

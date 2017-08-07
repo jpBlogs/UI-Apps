@@ -1,0 +1,14 @@
+.ResultsPage-AutoCompleteDiv
+{
+  padding-bottom: 25px;
+}
+
+.ResultsPage-AutoCompleteDiv h6
+{
+  line-height: 35px;
+}
+
+.ResultsPage-ListItem .card-header
+{
+  cursor: pointer;
+}

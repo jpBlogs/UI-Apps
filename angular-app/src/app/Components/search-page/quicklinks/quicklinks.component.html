@@ -1,0 +1,18 @@
+<div id="Quicklinks">
+    <div class="card" *ngIf="data">
+        <div class="card-header">{{data.header}}</div>
+        <div class="card-block">
+          <ul id="Quicklinks-List">
+            <li *ngFor="let link of data.links">
+              <a (click)="onSelect(data.header, link)">{{link}}</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="card" *ngIf="!data">
+        <div class="card-header">Loading...</div>
+        <div class="card-block">
+          Loading...
+        </div>
+    </div>
+</div>

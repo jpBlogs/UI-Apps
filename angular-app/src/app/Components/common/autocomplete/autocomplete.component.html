@@ -1,0 +1,8 @@
+<input id="autocomplete"
+  type="text"
+  class="form-control"
+  [(value)]="model"
+  [ngbTypeahead]="search"
+  [inputFormatter]="formatter"
+  [resultFormatter]="formatter"
+  (selectItem)="onSelect($event)" />

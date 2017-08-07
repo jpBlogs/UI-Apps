@@ -5,7 +5,7 @@ export const GetFilters = () => {
 export const AddFilter = (display_name, internal_name, value) => {
     var filters =  getItemFromLocalStorage('filters');
     filters.push({ 'display_name': display_name, 'internal_name': internal_name, 'value': value });
-    SaveFilters(filters);
+    addItemToLocalStorage('filters', filters);
 }
 
 export const GetFilter = (internal_name) => {
@@ -17,10 +17,6 @@ export const GetFilter = (internal_name) => {
         }
     }
     return null;
-}
-
-export const SaveFilters = (value) => {
-    addItemToLocalStorage('filters', value);
 }
 
 export const ClearAllFilters = () => {
