@@ -25,7 +25,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={SearchPage}/>
             <Route path="/results" component={ResultsPage}/>
-            <Route path="/details/:id" component={DetailsPage}/>
+            <Route path="/details/:id/:tab?" component={DetailsPage}/>
           </Switch>
         </div>
       </div>

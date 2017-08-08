@@ -21,10 +21,10 @@ export class ResultsPageComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit() {
-    this.updateResults();
+    this.updateResultsPage();
   }
 
-  updateResults() {
+  updateResultsPage() {
     this.filters = this._filterService.GetFilters();
     this._dataService.GetResults(this.filters)
       .then(results => this.results = results)

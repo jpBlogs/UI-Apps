@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 
 export default class Quicklinks extends Component {
     componentDidMount(){
-        GetQuicklinks(this.props.name).then((data) => {this.setState(data);});
+        GetQuicklinks(this.props.type).then((data) => {this.setState(data);});
     }
     selectQuicklink(display_name, internal_name, value) {
         AddFilter(display_name, internal_name, value);

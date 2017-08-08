@@ -14,6 +14,7 @@ export default class SearchPage extends Component {
             'language']
         }
         ClearAllFilters();
+        this.goToResultsPage = this.goToResultsPage.bind(this);
     }
     goToResultsPage() {
         this.history.push('/results');
@@ -28,9 +29,9 @@ export default class SearchPage extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    {this.state.linksList.map((type) =>
+                    {this.state.linksList.map((link) =>
                         <div className="col-lg-3">
-                            <Quicklinks name={type} history={this.props.history} onClick={this.goToResultsPage} />
+                            <Quicklinks type={link} history={this.props.history} onClick={this.goToResultsPage} />
                         </div>
                     )}
                 </div>

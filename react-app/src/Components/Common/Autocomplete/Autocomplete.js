@@ -22,12 +22,6 @@ export default class Autocomplete extends Component {
             })
         );
     }
-    selectValue (newValue) {
-        this.setState({
-			selectValue: newValue
-		});
-        this.setTextFilter(newValue);
-	}
     setTextFilter (value) {
         ClearAllFilters();
         AddFilter(value.value, 'full_name', value.label);
@@ -41,7 +35,7 @@ export default class Autocomplete extends Component {
                 loadOptions={this.getOptions}
                 clearable={this.state.clearable} 
                 value={this.state.selectValue} 
-                onChange={(data) => {this.selectValue(data)}} 
+                onChange={(data) => {this.setTextFilter(data)}} 
                 searchable={this.state.searchable}
                 disabled={this.state.disabled}  
             />

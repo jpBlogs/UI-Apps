@@ -23,8 +23,8 @@ export default class ResultsPage extends Component {
         GetResults().then((data) => {this.setState({results: data})});
         this.setState({filters: GetFilters()});
     }
-    goToDetails(id){
-        this.props.history.push(`/details/${id}`);
+    goToDetails(id, tab){
+        this.props.history.push(`/details/${id}/${tab}`);
     }
     render () {
         return (
@@ -57,10 +57,15 @@ export default class ResultsPage extends Component {
                     {this.state.results.map((listItem) =>
                         <div className="ResultsPage-ListItem col-lg-12">
                             <div className="panel panel-default">
-                            <div className="panel-heading" onClick={() => this.goToDetails(listItem.id)}>{listItem.full_name}</div>
+                            <div className="panel-heading" onClick={() => this.goToDetails(listItem.id, '')}>{listItem.full_name}</div>
                                 <div className="panel-body">
-                                    <div className="col-lg-4">City: {listItem.city}</div>
-                                    <div className="col-lg-4">State: {listItem.state}</div>
+                                    <div className="row">
+                                        <div className="col-lg-4">City: {listItem.city}</div>
+                                        <div className="col-lg-4">State: {listItem.state}</div>
+                                    </div>
+                                    <div className="row">
+                                        <Button onClick = {() => this.goToDetails(listItem.id, 'location')} bsStyle="link">Location Information</Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

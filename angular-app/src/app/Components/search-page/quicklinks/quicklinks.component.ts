@@ -22,7 +22,7 @@ export class QuicklinksComponent implements OnInit {
       .catch(this.handleError);
   }
 
-  onSelect (display_name: string, link: string){
+  selectQuicklink (display_name: string, link: string){
     this._filterService.AddFilter(display_name, this.type, link);
     this.onClick.emit();
   }

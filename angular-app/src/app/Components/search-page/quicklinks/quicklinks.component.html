@@ -4,7 +4,7 @@
         <div class="card-block">
           <ul id="Quicklinks-List">
             <li *ngFor="let link of data.links">
-              <a (click)="onSelect(data.header, link)">{{link}}</a>
+              <a (click)="selectQuicklink(data.header, link)">{{link}}</a>
             </li>
           </ul>
         </div>

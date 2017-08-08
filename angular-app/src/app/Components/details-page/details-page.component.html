@@ -1,12 +1,17 @@
 <div class="DetailsPage col-lg-12">
     <div class="DetailsPage-Card card">
         <div class="DetailsPage-Toolbar card-header">
-            <div class="row">
+            <div class="row" *ngIf="result">
                 <div class="col-lg-8">
                     <h1>{{result.full_name}}</h1>
                 </div>
                 <div class="DetailsPage-BackBtn col-lg-4">
                     <input class="btn btn-info" type="button" value="Back" (click)="goBack()" />
+                </div>
+            </div>
+            <div class="row" *ngIf="!result">
+                <div class="col-lg-8">
+                    <h1>Loading...</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +28,7 @@
                     </div>
                     <div class="tab-content col-lg-9">
                         <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 1}" id="details">
-                            <div className="col-lg-12">
+                            <div className="col-lg-12" *ngIf="result">
                                 <p>First Name: {{result.first_name}}</p>
                                 <p>Last Name: {{result.last_name}}</p>
                                 <p>Language: {{result.language}}</p>
@@ -31,11 +36,17 @@
                                 <p>Gender: {{result.gender}}</p>
                                 <p>Eye Color: {{result.eye_color}}</p>
                             </div>
+                            <div className="col-lg-12" *ngIf="!result">
+                                <p>Loading...</p>
+                            </div>
                         </div>
                         <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 2}" id="location">
-                            <div className="col-lg-12">
+                            <div className="col-lg-12" *ngIf="result">
                                 <p>City: {{result.city}}</p>
                                 <p>State: {{result.state}}</p>
+                            </div>
+                            <div className="col-lg-12" *ngIf="!result">
+                                <p>Loading...</p>
                             </div>
                         </div>
                     </div>
