@@ -1,12 +1,14 @@
 <div class="ResultsPage container-fluid">
     <div class="ResultsPage-AutoCompleteDiv row">
-        <div class="col-lg-12">
-            <div class="col-lg-1"><h6>Search:</h6></div>
-            <div class="col-lg-11"><app-autocomplete (onClick)="updateResults()"></app-autocomplete></div>
+        <div class="container-fluid col-lg-12">
+            <div class="row">
+                <div class="col-lg-1"><h6>Search:</h6></div>
+                <div class="col-lg-11"><app-autocomplete (onClick)="updateResults()"></app-autocomplete></div>
+            </div>
         </div>
     </div>
     <div class="ResultsPage-Toolbar row col-lg-12">
-        <input class="btn btn-default" type="button" value="Back" (click)="goBack()" />
+        <input class="btn btn-info" type="button" value="Back" (click)="goBack()" />
     </div>
     <div class="ResultsPage-Header row col-lg-12">
         <h1>Results: {{results.length}}</h1>

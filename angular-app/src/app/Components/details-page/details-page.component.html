@@ -1,42 +1,46 @@
 <div class="DetailsPage col-lg-12">
     <div class="DetailsPage-Card card">
         <div class="DetailsPage-Toolbar card-header">
-            <div class="col-lg-8">
-                <h1>{{result.full_name}}</h1>
-            </div>
-            <div class="DetailsPage-BackBtn col-lg-4">
-                <input class="btn btn-default" type="button" value="Back" (click)="goBack()" />
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>{{result.full_name}}</h1>
+                </div>
+                <div class="DetailsPage-BackBtn col-lg-4">
+                    <input class="btn btn-info" type="button" value="Back" (click)="goBack()" />
+                </div>
             </div>
         </div>
         <div class="card-block">
-          <div class="DetailsPage-Nav col-lg-3">
-            <ul class="nav nav-pills nav-justified">
-              <li class="nav-item">
-                <a [ngClass]="{'nav-link': true, 'active': selectedTab === 1}" (click)="changeTab(1)" role="tab">Personal Information</a>
-              </li>
-              <li class="nav-item">
-                <a [ngClass]="{'nav-link': true, 'active': selectedTab === 2}" (click)="changeTab(2)" role="tab">Location Information</a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content col-lg-9">
-            <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 1}" id="details">
-                <div className="col-lg-12">
-                    <p>First Name: {{result.first_name}}</p>
-                    <p>Last Name: {{result.last_name}}</p>
-                    <p>Language: {{result.language}}</p>
-                    <p>Email: {{result.email}}</p>
-                    <p>Gender: {{result.gender}}</p>
-                    <p>Eye Color: {{result.eye_color}}</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="DetailsPage-Nav col-lg-3 container-fluid">
+                        <div class="nav nav-pills nav-justified row">
+                                <a [ngClass]="{'nav-link': true, 'active': selectedTab === 1}" (click)="changeTab(1)" role="tab">Personal Information</a>
+                        </div>
+                        <div class="nav nav-pills nav-justified row">
+                                <a [ngClass]="{'nav-link': true, 'active': selectedTab === 2}" (click)="changeTab(2)" role="tab">Location Information</a>
+                        </div>
+                    </div>
+                    <div class="tab-content col-lg-9">
+                        <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 1}" id="details">
+                            <div className="col-lg-12">
+                                <p>First Name: {{result.first_name}}</p>
+                                <p>Last Name: {{result.last_name}}</p>
+                                <p>Language: {{result.language}}</p>
+                                <p>Email: {{result.email}}</p>
+                                <p>Gender: {{result.gender}}</p>
+                                <p>Eye Color: {{result.eye_color}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 2}" id="location">
+                            <div className="col-lg-12">
+                                <p>City: {{result.city}}</p>
+                                <p>State: {{result.state}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div [ngClass]="{'tab-pane': true, 'active': selectedTab === 2}" id="location">
-                <div className="col-lg-12">
-                    <p>City: {{result.city}}</p>
-                    <p>State: {{result.state}}</p>
-                </div>
-            </div>
-          </div>
         </div>
     </div>
 </div>

@@ -1,17 +1,28 @@
-.nav-item
+.nav-pills
 {
   margin-left: 0 !important;
 }
 
-.nav-item .nav-link:hover
+.nav-pills .nav-link
+{
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-pills .active
+{
+  border-bottom: none;
+}
+
+.nav-pills .nav-link:hover
 {
   background-color: #ddd;
   cursor: pointer;
 }
 
-.nav-item .active:hover
+.nav-pills .active:hover
 {
   background-color: #0275d8;
+  color: white;
   cursor: default;
 }
 
