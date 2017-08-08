@@ -33,7 +33,7 @@ export class AutocompleteComponent implements OnInit {
   formatter = (x: {text: string}) => x.text;
 
   onSelect(event: any) {
-    this._filterService.ClearFilters();
+    this._filterService.ClearAllFilters();
     this._filterService.AddFilter('', event.item.internal_name, event.item.text);
     this.onClick.emit();
   }

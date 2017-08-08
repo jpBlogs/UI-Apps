@@ -6,17 +6,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3">
-            <app-quicklinks [type]="linksList[0]" (onClick)="goToResultsPage()"></app-quicklinks>
-        </div>
-        <div class="col-lg-3">
-            <app-quicklinks [type]="linksList[1]" (onClick)="goToResultsPage()"></app-quicklinks>
-        </div>
-        <div class="col-lg-3">
-            <app-quicklinks [type]="linksList[2]" (onClick)="goToResultsPage()"></app-quicklinks>
-        </div>
-        <div class="col-lg-3">
-            <app-quicklinks [type]="linksList[3]" (onClick)="goToResultsPage()"></app-quicklinks>
+        <div class="col-lg-3" *ngFor="let type of linksList">
+            <app-quicklinks [type]="type" (onClick)="goToResultsPage()"></app-quicklinks>
         </div>
     </div>
 </div>

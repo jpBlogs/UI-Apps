@@ -7,10 +7,13 @@ import {ClearAllFilters} from '../../Service/ManageFilters';
 export default class SearchPage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            linksList: ['state',
+            'city',
+            'eye_color',
+            'language']
+        }
         ClearAllFilters();
-    }
-    renderQuicklinks(name) {
-        return <Quicklinks name={name} history={this.props.history} onClick={this.goToResultsPage} />;
     }
     goToResultsPage() {
         this.history.push('/results');
@@ -25,18 +28,11 @@ export default class SearchPage extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-3">
-                        {this.renderQuicklinks('state')}
-                    </div>
-                    <div className="col-lg-3">
-                        {this.renderQuicklinks('city')}
-                    </div>
-                    <div className="col-lg-3">
-                        {this.renderQuicklinks('eye_color')}
-                    </div>
-                    <div className="col-lg-3">
-                        {this.renderQuicklinks('language')}
-                    </div>
+                    {this.state.linksList.map((type) =>
+                        <div className="col-lg-3">
+                            <Quicklinks name={type} history={this.props.history} onClick={this.goToResultsPage} />
+                        </div>
+                    )}
                 </div>
             </div>
         );

@@ -18,21 +18,22 @@ export class DataService {
 
   //*************** Public Methods *****************************
   /**
-   * Get quicklinks
+   * Gets autocomplete suggestions by matching 'text' to
+   * the 'full_name' property
+   */
+  public GetSuggestions(text: string): Observable<SuggestionsData[]> {
+    return this.http.get('/assets/mock_data.json')
+             .map(response => this.extractSuggestions(text, response.json()))
+             .catch(this.handleError);
+  }
+
+  /**
+   * Get unique values of the property matching 'type'
    */
   public GetQuicklinks(type: string): Promise<QuicklinkData> {
     return this.http.get('/assets/mock_data.json')
              .toPromise()
              .then(response => this.extractQuicklinksData(type, response.json()))
-             .catch(this.handleError);
-  }
-
-  /**
-   * Get autocomplete suggestions
-   */
-  public GetSuggestions(text: string): Observable<SuggestionsData[]> {
-    return this.http.get('/assets/mock_data.json')
-             .map(response => this.extractSuggestions(text, response.json()))
              .catch(this.handleError);
   }
 
@@ -100,18 +101,20 @@ export class DataService {
   }
 
   /**
-   * Extract autocomplete suggestions from the mock data
+   * Extract results that match the selected filters
    */
   private extractResults (filters: Filter[], data): Result[] {
     let results: Result[]= [];
-    filters.forEach(function(filter) {
-        data.forEach(function(element) {
-            if(element[filter.internal_name] === filter.value) {
-                if(results.indexOf(element) < 0){
-                    results.push(element);
-                }
+    data.forEach(function(element) {
+        let isMatch: boolean = true;
+        filters.forEach(function(filter) {
+            if(element[filter.internal_name] !== filter.value) {
+                isMatch = false;
             }
-        }, this);
+        });
+        if(isMatch){
+            results.push(element);
+        }
     });
     return results as Result[];
   }

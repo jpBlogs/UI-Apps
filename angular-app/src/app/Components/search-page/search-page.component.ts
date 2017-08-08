@@ -19,7 +19,7 @@ export class SearchPageComponent implements OnInit {
     'city',
     'eye_color',
     'language'];
-    this._filterService.ClearFilters();
+    this._filterService.ClearAllFilters();
   }
 
   goToResultsPage() {

@@ -7,8 +7,15 @@ export class FiltersService {
   constructor() { }
 
   //***********Public Methods*************/
+
   /**
-   * AddFilter
+   * Get all filters
+   */
+  public GetFilters(): Filter[] {
+    return this.getItemFromLocalStorage('filters') as Filter[];
+  }
+
+  /**
    * Add a new filter to the filter list
    */
   public AddFilter(display_name: string, internal_name: string, value: string) {
@@ -21,7 +28,6 @@ export class FiltersService {
   }
 
   /**
-   * GetFilter
    * Get a filter by name from the filter list
    */
   public GetFilter(internal_name: string): Filter {
@@ -36,24 +42,14 @@ export class FiltersService {
   }
 
   /**
-   * GetFilters
-   * Get all filters
+   * Clears all filters
    */
-  public GetFilters(): Filter[] {
-    return this.getItemFromLocalStorage('filters') as Filter[];
-  }
-
-  /**
-   * ClearFilters
-   * Clear all filters
-   */
-  public ClearFilters() {
+  public ClearAllFilters() {
     this.addItemToLocalStorage('filters', []);
   }
 
   //***********Private Methods*************/
   /**
-   * addItemToLocalStorage
    * Save item to local storage
    */
   private addItemToLocalStorage(name: string, value: any) {
@@ -65,7 +61,6 @@ export class FiltersService {
   }
 
   /**
-   * getItemFromLocalStorage
    * Get item from local storage
    */
   private getItemFromLocalStorage(name: string) {

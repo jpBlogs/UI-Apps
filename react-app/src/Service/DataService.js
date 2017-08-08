@@ -1,5 +1,10 @@
 import { GetFilters } from './ManageFilters';
 
+//*************** Public Methods *****************************
+  /**
+   * Gets autocomplete suggestions by matching 'text' to
+   * the 'full_name' property
+   */
 export const GetSuggestions = (input) => {
   return fetch(`/mock_data.json`, {
       headers : { 
@@ -19,6 +24,9 @@ export const GetSuggestions = (input) => {
     });
 }
 
+/**
+   * Gets unique values of the property matching 'type'
+   */
 export const GetQuicklinks = (name) => {
   return fetch(`/mock_data.json`, {
       headers : { 
@@ -50,6 +58,9 @@ export const GetQuicklinks = (name) => {
     });
 }
 
+/**
+   * Get results matching the filters
+   */
 export const GetResults = () => {
   return fetch(`/mock_data.json`, {
       headers : { 
@@ -74,6 +85,9 @@ export const GetResults = () => {
     });
 }
 
+/**
+   * Gets result matching the id
+   */
 export const GetResultById = (id) => {
   return fetch(`/mock_data.json`, {
       headers : { 
