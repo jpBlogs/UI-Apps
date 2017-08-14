@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section PageStyles {
+    @Styles.Render("~/content/index/css")
+}
+<div id="SearchPage" class="container-fluid">
+    <div class="AutoCompleteDiv row">
+        @Html.Partial("Autocomplete")
+    </div>
+    <div class="row" ng-controller="SearchPageController">
+        <div class="col-lg-4" ng-repeat="quicklink in quicklinks" ng-show="quicklinks">
+            <div class="Quicklinks">
+                <div class="panel panel-default">
+                    <div class="panel-heading" ng-cloak>{{quicklink.DisplayName}}</div>
+                    <div class="panel-body">
+                        <ul id="QuicklinksList" ng-cloak>
+                            <li ng-repeat="link in quicklink.Links">
+                                <a class="link" ng-click="OnQuicklinkSelect(quicklink.InternalName, link)">{{link}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="!quicklinks">
+            Loading...
+        </div>
+    </div>
+</div>
+
+@section PageScripts {
+    @Scripts.Render("~/content/filtersservice/js")
+    @Scripts.Render("~/content/index/js")
+}
+

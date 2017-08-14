@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section PageStyles {
+    @Styles.Render("~/content/results/css")
+}
+
+<div id="ResultsPage" class="container-fluid">
+    <div class="AutoCompleteDiv row">
+        @Html.Partial("Autocomplete")
+    </div>
+    <div ng-controller="ResultsPageController">
+        <div class="Toolbar row col-lg-12">
+            <input class="btn btn-info" type="button" value="Back" ng-click="GoBack()" />
+        </div>
+        <div class="Header row col-lg-12">
+            <h1 ng-cloak>Results: {{results.length}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-1">
+                <p>Filters:</p>
+            </div>
+            <div class="col-lg-11" ng-show="filter">
+                <div class="Filters" ng-cloak>
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>{{' '+filter.value}}
+                </div>
+            </div>
+        </div>
+        <div class="ResultsList row" ng-show="results">
+            <div class="ListItem col-lg-12" ng-repeat="result in results">
+                <div class="panel panel-default">
+                    <div class="panel-heading" ng-click="GoToDetails(result.Id)" ng-cloak>{{result.FullName}}</div>
+                    <div class="panel-body">
+                        <div class="row" ng-cloak>
+                            <div class="col-lg-4">City: {{result.City}}</div>
+                            <div class="col-lg-4">State: {{result.State}}</div>
+                        </div>
+                        <div class="row">
+                            <a class="link" ng-click="GoToLocations(result.Id)">Location Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Loading row" ng-show="!results">
+            Loading...
+        </div>
+    </div>
+</div>
+
+@section PageScripts {
+    @Scripts.Render("~/content/filtersservice/js")
+    @Scripts.Render("~/content/results/js")
+}

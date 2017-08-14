@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section PageStyles {
+    @Styles.Render("~/content/details/css")
+}
+
+<div id="DetailsPage" class="col-lg-12" ng-controller="DetailsController">
+    <div class="Card panel panel-default">
+        <div class="Toolbar panel-heading">
+            <div class="row" ng-show="result">
+                <div class="col-lg-8">
+                    <h1 ng-cloak>{{result.FullName}}</h1>
+                </div>
+                <div class="BackBtn col-lg-4">
+                    <input class="btn btn-info" type="button" value="Back" ng-click="GoBack()" />
+                </div>
+            </div>
+            <div class="row" ng-show="!result">
+                <div class="col-lg-8">
+                    <h1>Loading...</h1>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="DetailsPage-Nav col-lg-3 container-fluid">
+                        <ul class="nav nav-pills nav-stacked row">
+                            <li role="presentation" ng-click="ChangeTab('details')" ng-class="{'active': SelectedTab == 'details' }"><a>Personal Information</a></li>
+                            <li role="presentation" ng-click="ChangeTab('location')" ng-class="{'active': SelectedTab == 'location' }"><a>Location Information</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content col-lg-9">
+                        <div ng-show="SelectedTab == 'details'" id="details">
+                            <div class="col-lg-12" ng-show="result" ng-cloak>
+                                <p>First Name: {{result.FirstName}}</p>
+                                <p>Last Name: {{result.LastName}}</p>
+                                <p>Language: {{result.Language}}</p>
+                                <p>Email: {{result.Email}}</p>
+                                <p>Gender: {{result.Gender}}</p>
+                            </div>
+                            <div class="col-lg-12" ng-show="!result">
+                                <p>Loading...</p>
+                            </div>
+                        </div>
+                        <div ng-show="SelectedTab == 'location'" id="location">
+                            <div class="container-fluid col-lg-12" ng-show="result" ng-cloak>
+                                <div class="row">
+                                    <p>Address Line 1: {{result.AddressLine1}}</p>
+                                    <p>City: {{result.City}}</p>
+                                    <p>State: {{result.State}}</p>
+                                    <p>Zipcode: {{result.Zipcode}}</p>
+                                </div>
+                                <div id="DetailsMap" class="row col-lg-12">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-12" ng-show="!result">
+                                <p>Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section PageScripts {
+    <script>
+        var id = @ViewBag.Id;
+        var tabId = '@ViewBag.TabId';
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4QkESbKq9N9bIc1X3rK4BeQz8kSPDtHY"
+            async defer></script>
+    @Scripts.Render("~/content/details/js")
+}
+

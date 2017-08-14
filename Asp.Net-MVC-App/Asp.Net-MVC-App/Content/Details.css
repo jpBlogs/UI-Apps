@@ -1,0 +1,21 @@
+﻿.BackBtn input
+{
+    float: right;
+}
+
+.nav-pills li a
+{
+    cursor: pointer;
+}
+
+#DetailsMap
+{
+    height: 400px;
+}
+
+.panel-body
+{
+  min-height: 300px;
+  margin-top: 15px;
+  overflow: auto;
+}

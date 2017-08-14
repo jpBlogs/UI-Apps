@@ -1,0 +1,12 @@
+﻿#SearchPage .Quicklinks
+{
+    text-align: left;  
+    height: 350px;
+    overflow: auto;
+}
+
+#QuicklinksList
+{
+    list-style: none;
+    padding-left: 0;
+}

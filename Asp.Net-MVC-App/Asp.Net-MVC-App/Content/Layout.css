@@ -1,0 +1,59 @@
+﻿/*
+    Global Styles
+*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+a.link
+{
+  color: #337ab7 !important;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+a.link:hover
+{
+  text-decoration: underline !important;
+}
+
+input.btn
+{
+    cursor: pointer;
+}
+
+.AutoCompleteDiv
+{
+  padding-bottom: 15px;
+}
+
+.AutoCompleteDiv .AutoCompleteRowWrapper
+{
+  width: 60%;
+  margin: auto;
+}
+
+/*
+    Layout Styles
+*/
+#App {
+  overflow: auto;
+}
+
+#App .header {
+  min-height: 250px;
+  text-align: center;
+}
+
+#App .header h1
+{
+  height: 100%;
+  padding-top: 50px;
+}
+
+#PageContainer
+{
+  width:70%;
+  margin:auto;
+  margin-top:15px;
+}
