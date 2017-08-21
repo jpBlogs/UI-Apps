@@ -18,7 +18,7 @@ namespace Asp.Net_MVC_App.Api.Controllers
     {
         private DBContext db = new DBContext();
 
-        // GET: api/Filters
+        // GET: api/quicklinks
         [ResponseType(typeof(List<Quicklinks>))]
         public IHttpActionResult Get()
         {
